@@ -1,5 +1,5 @@
 # SCT_SD_02
-This project is a classic "Guess the Number" game built using C++ developed as a part of my internship at SkillCraft Technology.
+This project is a classic "Guess the Number" game built using HTML ,CSS , JAVASCRIPT and C++ developed as a part of my internship at SkillCraft Technology.
 # 🎮 GUESS THE NUMBER
 
 A simple and fun web-based number guessing game where users have **5 chances** to guess a randomly generated number between 1 and 100.
@@ -43,8 +43,6 @@ Built using **HTML**, **CSS**, and **JavaScript**, this interactive project was 
 - Vanilla JavaScript (no libraries)
 - Programming language : C++
 
----
 
-## 📁 File Structure
 
 
