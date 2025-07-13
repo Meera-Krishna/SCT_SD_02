@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5-Chance Number Guess</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: brown;
+      text-align: center;
+      padding: 40px;
+    }
+    .game-container {
+      background:wheat;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    input[type="number"] {
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    #restart {
+      margin-top: 15px;
+      background-color: #16a085;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h2>🎯 Guess the Number (5 Tries)</h2>
+    <p>Pick a number between 1 and 100</p>
+    <input type="number" id="userGuess" min="1" max="100"/>
+    <br/>
+    <button onclick="playGame()">Guess</button>
+    <p id="feedback"></p>
+    <button id="restart" onclick="location.reload()">Restart</button>
+  </div>
+
+  <script>
+    const numberToGuess = Math.floor(Math.random() * 100) + 1;
+    let attemptsLeft = 5;
+
+    function playGame() {
+      const guess = parseInt(document.getElementById("userGuess").value);
+      const feedback = document.getElementById("feedback");
+      const restartBtn = document.getElementById("restart");
+
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        feedback.textContent = "⚠️ Enter a valid number (1-100).";
+        return;
+      }
+
+      attemptsLeft--;
+
+      if (guess === numberToGuess) {
+        feedback.textContent = "🎉 Correct! You guessed the number!";
+        restartBtn.style.display = "inline-block";
+      } else if (attemptsLeft > 0) {
+        const hint = guess < numberToGuess ? "Too low" : "Too high";
+        feedback.textContent = `${hint}. You have ${attemptsLeft} chance(s) left.`;
+      } else {
+        feedback.textContent = `❌ No more chances! The number was ${numberToGuess}.`;
+        restartBtn.style.display = "inline-block";
+      }
+    }
+  </script>
+</body>
+</html>
