@@ -42,6 +42,15 @@ Built using **HTML**, **CSS**, and **JavaScript**, this interactive project was 
 - CSS3
 - Vanilla JavaScript (no libraries)
 
+---
+
+## ✍️Author
+
+**Meera Krishna**  
+Intern @ SkillCraft Technology
+
+
+
 
 
 
